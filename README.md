@@ -1,6 +1,6 @@
 n8felton-recipes
 ================
 
-Recipes for Autopkg - https://github.com/autopkg
+Diverged recipes for Autopkg - https://github.com/autopkg
 
-`autopkg repo-add https://github.com/autopkg/n8felton-recipes.git`
+`autopkg repo-add https://github.com/n8felton/n8felton-recipes.git`
