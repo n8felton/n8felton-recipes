@@ -15,7 +15,7 @@
 			<key>MUNKI_CATEGORY</key>
 			<string>Software Development</string>
 			<key>MUNKI_REPO_SUBDIR</key>
-			<string>%NAME%</string>
+			<string>apps/%NAME%</string>
 			<key>pkginfo</key>
 			<dict>
 				<key>catalogs</key>
