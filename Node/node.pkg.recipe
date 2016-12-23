@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Description</key>
+        <string>Downloads the latest version of Node.js and creates an updated package with the proper version.</string>
+        <key>Identifier</key>
+        <string>com.github.n8felton.pkg.node</string>
+		<key>Input</key>
+		<dict/>
+        <key>MinimumVersion</key>
+        <string>0.6.0</string>
+        <key>ParentRecipe</key>
+        <string>com.github.gerardkok.download.node</string>
+        <key>Process</key>
+        <array>
+            <dict>
+                <key>Processor</key>
+                <string>FlatPkgUnpacker</string>
+                <key>Arguments</key>
+                <dict>
+                    <key>flat_pkg_path</key>
+                    <string>%pathname%</string>
+                    <key>destination_path</key>
+                    <string>/tmp/%NAME%</string>
+                    <key>purge_destination</key>
+                    <string>True</string>
+                </dict>
+            </dict>
+			<dict>
+				<key>Processor</key>
+				<string>com.github.n8felton.shared/PkgInfoVersioner</string>
+				<key>Arguments</key>
+				<dict>
+					<key>unpacked_path</key>
+					<string>/tmp/%NAME%</string>
+					<key>PKGID</key>
+					<string>org.nodejs.node.pkg</string>
+					<key>VERSION</key>
+					<string>%version%</string>
+				</dict>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>FlatPkgPacker</string>
+				<key>Arguments</key>
+				<dict>
+					<key>source_flatpkg_dir</key>
+					<string>/tmp/%NAME%</string>
+					<key>destination_pkg</key>
+					<string>/tmp/%NAME%-%VERSION%.pkg</string>
+				</dict>
+			</dict>
+        </array>
+    </dict>
+</plist>
