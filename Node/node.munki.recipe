@@ -13,7 +13,7 @@
 			<key>NAME</key>
 			<string>Node</string>
 			<key>MUNKI_CATEGORY</key>
-			<string>Software Development</string>
+			<string>Developer Tools</string>
 			<key>MUNKI_REPO_SUBDIR</key>
 			<string>apps/%NAME%</string>
 			<key>pkginfo</key>
@@ -32,8 +32,8 @@
 				<string>%DISPLAY_NAME%</string>
 				<key>name</key>
 				<string>%NAME%</string>
-                <key>unattended_install</key>
-                <true/>
+				<key>unattended_install</key>
+				<true/>
 			</dict>
 		</dict>
 		<key>ParentRecipe</key>
@@ -42,6 +42,19 @@
 		<string>0.3.0</string>
 		<key>Process</key>
 		<array>
+			<dict>
+				<key>Processor</key>
+				<string>MunkiPkginfoMerger</string>
+                <key>Arguments</key>
+				<dict>
+					<key>additional_pkginfo</key>
+					<dict>
+						<key>postinstall_script</key>
+						<string>#!/bin/bash
+npm install npm@latest -g</string>
+					</dict>
+				</dict>
+			</dict>
 			<dict>
 				<key>Processor</key>
 				<string>MunkiImporter</string>
