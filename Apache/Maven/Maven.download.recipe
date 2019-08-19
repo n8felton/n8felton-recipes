@@ -12,8 +12,6 @@
 		<string>Maven</string>
 		<key>DOWNLOAD_URL</key>
 		<string>https://mirrors.ocf.berkeley.edu/apache/maven/binaries</string>
-		<key>SEARCH_URL</key>
-		<string>https://mirrors.ocf.berkeley.edu/apache/maven/binaries/?C=N;O=D</string>
 	</dict>
 	<key>Process</key>
 	<array>
@@ -23,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>%SEARCH_URL%</string>
+				<string>%DOWNLOAD_URL%/?V=1;O=D</string>
 				<key>re_pattern</key>
 				<string>(?P&lt;filename&gt;apache-maven-(?P&lt;version&gt;.+?)-bin.tar.gz)</string>
 			</dict>
