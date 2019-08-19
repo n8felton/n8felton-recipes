@@ -40,6 +40,8 @@
 				<dict>
 					<key>destination_path</key>
 					<string>%RECIPE_CACHE_DIR%/unpack</string>
+					<key>purge_destination</key>
+					<true/>
 				</dict>
 			</dict>
 			<dict>
@@ -113,5 +115,5 @@
 				</dict>
 			</dict>
 		</array>
-	</dict> 
+	</dict>
 </plist>
