@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>Maven</string>
 		<key>DOWNLOAD_URL</key>
-		<string>https://mirrors.ocf.berkeley.edu/apache/maven/binaries</string>
+		<string>http://maven.apache.org/download.cgi</string>
 	</dict>
 	<key>Process</key>
 	<array>
@@ -21,9 +21,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%/?V=1;O=D</string>
+				<string>%DOWNLOAD_URL%</string>
 				<key>re_pattern</key>
-				<string>(?P&lt;filename&gt;apache-maven-(?P&lt;version&gt;.+?)-bin.tar.gz)</string>
+				<string>href="(?P&lt;url&gt;https?[^"]*(?P&lt;filename&gt;apache-maven-(?P&lt;version&gt;.+?)-bin.tar.gz))</string>
 			</dict>
 		</dict>
 		<dict>
@@ -31,8 +31,6 @@
 			<string>URLDownloader</string>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>%DOWNLOAD_URL%/%filename%</string>
 				<key>filename</key>
 				<string>%filename%</string>
 			</dict>
@@ -42,5 +40,5 @@
 			<string>EndOfCheckPhase</string>
 		</dict>
 	</array>
-</dict> 
+</dict>
 </plist>
